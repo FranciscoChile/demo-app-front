@@ -1,5 +1,12 @@
 # DemoApp
 
+1. Se utilizó Angular 15 y Tailwinds CSS 3.4
+2. Se usaron los componentes propios de Angular para modelar una arquitectura de dos capas.
+3. Contiene 3 componentes para presentación, header, news y favs.
+4. Para las busquedas se utilizo un PipeTransform.
+5. Se utiliza una clase como DTO para transportar datos entre capas.
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.1.
 
 ## Development server
