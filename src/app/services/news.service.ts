@@ -52,4 +52,9 @@ export class NewsService {
     return throwError(() => error);
   }
   
+  searchNews(searchTerm: string): Observable<any> {
+    return this.http.get("https://api.spaceflightnewsapi.net/v4/articles/?search=" + searchTerm);
+  }
+
+
 }

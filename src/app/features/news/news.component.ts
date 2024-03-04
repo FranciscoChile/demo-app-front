@@ -79,4 +79,34 @@ export class NewsComponent implements OnInit {
       }
     });
   }
+
+  searchNews(event: Event) {
+
+    const newValue = (event.target as HTMLInputElement).value;
+
+    this.api.searchNews(newValue).subscribe({
+      next: (data) => {        
+        this.nextUrl = data.next;
+        this.previousUrl = data.previous;
+        const result = data.results;
+
+        this.newsList = result.map((elem: any) => {
+          var c = new News();
+
+          c.id = elem.id;
+          c.title = elem.title;
+          c.description = elem.news_site;
+          c.summary = elem.summary;
+          c.image_url = elem.image_url;
+          c.published_at = elem.published_at;
+
+          return c;
+        });
+      },
+      error: (e) => {
+        console.log('Error');        
+      }
+    })
+
+  }
 }
